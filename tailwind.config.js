@@ -65,7 +65,6 @@ module.exports = {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
         arabic: ["var(--font-arabic)", "Noto Sans Arabic", "sans-serif"],
-        patrick: ["var(--font-patrick)", "Patrick Hand", "cursive"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
