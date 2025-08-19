@@ -1,16 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Import Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.99 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.55 0.15 250);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -22,7 +25,7 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.55 0.15 250);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -31,17 +34,18 @@
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.55 0.15 250);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.55 0.15 250);
   --font-inter: "Inter", sans-serif;
-  /* Custom accent color - vibrant violet */
-  --accent-violet: #A78BFA;
-  --accent-violet-light: #C4B5FD;
-  --accent-violet-dark: #8B5CF6;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+  --font-patrick: "Patrick Hand", cursive;
+  --accent-blue: #3B82F6;
+  --accent-blue-light: #60A5FA;
+  --accent-blue-dark: #1D4ED8;
 }
 
 .dark {
@@ -51,7 +55,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: var(--accent-violet);
+  --primary: var(--accent-blue);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -63,7 +67,7 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: var(--accent-violet);
+  --ring: var(--accent-blue);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -82,6 +86,8 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-arabic: var(--font-arabic);
+  --font-patrick: var(--font-patrick);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -127,20 +133,53 @@
   body {
     @apply bg-background text-foreground font-sans;
     background-image: 
-      radial-gradient(circle at center, rgba(167, 139, 250, 0.03) 0%, rgba(167, 139, 250, 0) 60%),
+      radial-gradient(circle at center, rgba(59, 130, 246, 0.03) 0%, rgba(59, 130, 246, 0) 60%),
       url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
     background-attachment: fixed;
+  }
+  
+  /* Arabic text styling */
+  .arabic-text {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.6;
+  }
+  
+  .arabic-heading {
+    font-family: var(--font-patrick);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.4;
+  }
+  
+  /* RTL support for mixed content */
+  .rtl {
+    direction: rtl;
+  }
+  
+  .ltr {
+    direction: ltr;
+  }
+  
+  /* Arabic font fallbacks */
+  .font-arabic {
+    font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .font-patrick {
+    font-family: "Patrick Hand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 
 /* Custom utility classes for enhanced interactions */
 @layer utilities {
   .card-hover {
-    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/10;
+    @apply transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10;
   }
   
   .button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 transition-all duration-200 ease-out shadow-lg hover:shadow-xl hover:shadow-violet-500/20;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 transition-all duration-200 ease-out shadow-lg hover:shadow-xl hover:shadow-blue-500/20;
   }
   
   .button-secondary {
@@ -149,5 +188,29 @@
   
   .input-focus {
     @apply focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 ease-out;
+  }
+  
+  .arabic-gradient {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue-light) 100%);
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Arabic-specific animations */
+  .arabic-fade-in {
+    animation: arabicFadeIn 0.8s ease-out;
+  }
+  
+  @keyframes arabicFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }

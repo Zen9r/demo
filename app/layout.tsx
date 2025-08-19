@@ -10,9 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Custom Web Solutions - Guided Demo",
-  description: "Experience the difference between custom and template solutions",
-  generator: "v0.app",
+  title: "عرض سعر مخصص - بوابة إلكترونية لشركة بزنس اريبيا",
+  description: "موقع مخصص مقابل قوالب جاهزة - اكتشف الفرق الجوهري",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${inter.variable}`}>
+    <html lang="ar" className={`${inter.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   )
