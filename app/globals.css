@@ -232,4 +232,49 @@
   .shadow-beams-hover:hover {
     box-shadow: 0 0 80px rgba(255, 255, 255, 0.1), 0 0 150px rgba(243, 244, 246, 0.05);
   }
+  
+  /* Seamless dark background for showcase section */
+  .seamless-dark-bg {
+    background: radial-gradient(ellipse at center, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
+  }
+  
+  /* Shimmer dark background for other sections */
+  .shimmer-dark-bg {
+    background: radial-gradient(ellipse at center, hsl(0 0% 5%) 0%, hsl(240 10% 3%) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer-dark-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    animation: shimmer 8s infinite linear;
+    pointer-events: none;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Noise texture overlay */
+  .shimmer-dark-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+    pointer-events: none;
+  }
+  }
 }

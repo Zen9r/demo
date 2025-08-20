@@ -69,7 +69,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <Card key={index} className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
               <CardHeader className="text-center pb-4">
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
+                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
                   {feature.icon}
                 </div>
                 <CardTitle className="text-xl font-bold text-white font-arabic">

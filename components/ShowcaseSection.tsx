@@ -47,7 +47,7 @@ export default function ShowcaseSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-[#111111] text-white">
+    <section className="py-20 px-4 text-white">
       <div className="max-w-6xl mx-auto">
         
         {/* Client Showcase Section */}

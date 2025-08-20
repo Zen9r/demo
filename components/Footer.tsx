@@ -57,7 +57,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
                   <Globe className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export default function Footer() {
                 نقدم حلول تقنية متطورة ومخصصة لمساعدة الشركات على النمو والتطور في العصر الرقمي.
               </p>
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-gray-400" />
+                <Award className="w-5 h-5 text-yellow-400" />
                 <span className="text-sm text-gray-300 font-arabic">خبرة أكثر من 5 سنوات</span>
               </div>
             </div>
@@ -108,16 +108,14 @@ export default function Footer() {
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <div className="text-gray-300">
-                        {info.icon}
-                      </div>
+                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      {info.icon}
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm font-arabic">{info.label}</p>
                       <a 
                         href={info.link} 
-                        className="text-gray-200 hover:text-white transition-colors duration-200 font-arabic"
+                        className="text-white hover:text-gray-300 transition-colors duration-200 font-medium font-arabic"
                       >
                         {info.value}
                       </a>
@@ -133,18 +131,30 @@ export default function Footer() {
       {/* Bottom Footer */}
       <div className="border-t border-gray-800 py-8 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-gray-400 text-sm font-arabic">
-              © 2024 بزنس اريبيا. جميع الحقوق محفوظة.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-white" />
+              <span className="text-gray-300 font-arabic">
+                © {new Date().getFullYear()} بزنس اريبيا. جميع الحقوق محفوظة.
+              </span>
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic">
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
+              >
                 سياسة الخصوصية
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic">
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
+              >
                 شروط الاستخدام
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic">
+              <a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
+              >
                 خريطة الموقع
               </a>
             </div>

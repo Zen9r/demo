@@ -2,19 +2,15 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import Beams from "./Beams"
 
 export default function HeroSection() {
   return (
     <section className="relative h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
-      {/* 3D Background */}
-      <Beams />
-      
       {/* Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto space-y-8">
         {/* Small Heading */}
-        <div className="space-y-2 animate-fade-in">
-          <h2 className="text-lg md:text-xl font-medium text-gray-300 font-arabic">
+        <div className="space-y-2">
+          <h2 className="text-lg md:text-xl font-medium text-blue-400 font-arabic">
             عرض سعر
           </h2>
         </div>
@@ -38,7 +34,7 @@ export default function HeroSection() {
           <Button 
             size="lg" 
             variant="outline"
-            className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white/10 hover:border-gray-300 hover:text-gray-200 font-semibold transition-all duration-300 group shadow-beams hover:shadow-beams-hover"
+            className="text-lg px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 hover:border-blue-300 hover:text-blue-300 font-semibold transition-all duration-300 group"
           >
             <span className="font-arabic">ابدأ مشروعك</span>
             <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />

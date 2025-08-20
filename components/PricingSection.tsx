@@ -64,7 +64,7 @@ export default function PricingSection() {
           {/* Basic Package */}
           <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
             <CardHeader className="text-center pb-6">
-              <div className={`w-20 h-20 bg-gradient-to-br ${basicPackage.color} rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
+              <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
                 <Star className="w-10 h-10" />
               </div>
               <CardTitle className="text-2xl font-bold text-white font-arabic">

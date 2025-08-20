@@ -91,7 +91,7 @@ export default function ProcessSection() {
               <div className="flex items-start gap-6">
                 {/* Step Number and Icon */}
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}>
+                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white shadow-lg">
                     {step.icon}
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-900 border-2 border-gray-600 rounded-full flex items-center justify-center">
