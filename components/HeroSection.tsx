@@ -1,50 +1,48 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Mail, ChevronDown } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Beams from "./Beams"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-6xl mx-auto space-y-8">
-        {/* Main Visual Element - Placeholder for PDF image */}
-        <div className="mb-8">
-          <div className="w-64 h-64 mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg">
-            <div className="text-center">
-              <div className="text-6xl mb-4">🏢</div>
-              <div className="text-blue-600 font-semibold">صورة من PDF</div>
-            </div>
-          </div>
+    <section className="relative h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
+      {/* 3D Background */}
+      <Beams />
+      
+      {/* Content Container */}
+      <div className="relative z-10 max-w-6xl mx-auto space-y-8">
+        {/* Small Heading */}
+        <div className="space-y-2">
+          <h2 className="text-lg md:text-xl font-medium text-blue-400 font-arabic">
+            عرض سعر
+          </h2>
         </div>
 
-        {/* Headlines */}
+        {/* Main Title */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-            عرض سعر مخصص
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight font-arabic text-shadow">
+            تطوير يواكب طموحاتك
           </h1>
-          <h2 className="text-3xl md:text-5xl font-semibold text-blue-600 leading-tight">
-            بوابة إلكترونية لشركة بزنس اريبيا
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
-            موقع إلكتروني متطور ومتجاوب مصمم خصيصاً لاحتياجات عملك
+        </div>
+
+        {/* Subheading */}
+        <div className="space-y-6">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-normal leading-relaxed font-arabic">
+            نحول أفكارك إلى واقع رقمي متكامل. مواقع ويب سريعة، تطبيقات مذهلة، وحلول تقنية تُحدث فرقًا.
           </p>
         </div>
 
-        {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <Button size="lg" className="text-lg px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
-            <Mail className="w-5 h-5 ml-2" />
-            تواصل معنا الآن
+        {/* Call to Action Button */}
+        <div className="flex justify-center mt-12">
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="text-lg px-8 py-4 border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 hover:border-blue-300 hover:text-blue-300 font-semibold transition-all duration-300 group"
+          >
+            <span className="font-arabic">ابدأ مشروعك</span>
+            <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold transition-all duration-200">
-            <ChevronDown className="w-5 h-5 ml-2" />
-            اكتشف المزيد
-          </Button>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="mt-12 animate-bounce">
-          <ChevronDown className="w-8 h-8 mx-auto text-blue-600" />
         </div>
       </div>
     </section>

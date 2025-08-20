@@ -1,8 +1,7 @@
 "use client"
 
 import HeroSection from "../components/HeroSection"
-import ComparisonSection from "../components/ComparisonSection"
-import TechStackSection from "../components/TechStackSection"
+import ShowcaseSection from "../components/ShowcaseSection"
 import FeaturesSection from "../components/FeaturesSection"
 import PricingSection from "../components/PricingSection"
 import ProcessSection from "../components/ProcessSection"
@@ -12,8 +11,7 @@ export default function BusinessArabiaPage() {
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
       <HeroSection />
-      <ComparisonSection />
-      <TechStackSection />
+      <ShowcaseSection />
       <FeaturesSection />
       <PricingSection />
       <ProcessSection />

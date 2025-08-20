@@ -1,12 +1,20 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Tajawal, Raleway } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({
+const tajawal = Tajawal({
+  subsets: ["arabic"],
+  display: "swap",
+  variable: "--font-tajawal",
+  weight: ["400", "500", "700"],
+})
+
+const raleway = Raleway({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-raleway",
+  weight: ["400", "500", "700"],
 })
 
 export const metadata: Metadata = {
@@ -21,8 +29,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" className={`${inter.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="ar" className={`${tajawal.variable} ${raleway.variable}`}>
+      <body className="font-sans antialiased" suppressHydrationWarning={true}>
+        {children}
+      </body>
     </html>
   )
 }
