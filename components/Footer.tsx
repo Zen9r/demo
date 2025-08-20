@@ -49,7 +49,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="text-white">
       {/* Main Footer Content */}
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -57,30 +57,30 @@ export default function Footer() {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
                   <Globe className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">بزنس اريبيا</h3>
-                  <p className="text-gray-400 text-sm">حلول تقنية متطورة</p>
+                  <h3 className="text-xl font-bold font-arabic">بزنس اريبيا</h3>
+                  <p className="text-gray-400 text-sm font-arabic">حلول تقنية متطورة</p>
                 </div>
               </div>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed font-arabic">
                 نقدم حلول تقنية متطورة ومخصصة لمساعدة الشركات على النمو والتطور في العصر الرقمي.
               </p>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-yellow-400" />
-                <span className="text-sm text-gray-300">خبرة أكثر من 5 سنوات</span>
+                <span className="text-sm text-gray-300 font-arabic">خبرة أكثر من 5 سنوات</span>
               </div>
             </div>
 
             {/* Services */}
             <div className="space-y-6">
-              <h4 className="text-lg font-bold text-white">خدماتنا</h4>
+              <h4 className="text-lg font-bold text-white font-arabic">خدماتنا</h4>
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
+                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200 font-arabic">
                       {service}
                     </a>
                   </li>
@@ -90,11 +90,11 @@ export default function Footer() {
 
             {/* Company */}
             <div className="space-y-6">
-              <h4 className="text-lg font-bold text-white">الشركة</h4>
+              <h4 className="text-lg font-bold text-white font-arabic">الشركة</h4>
               <ul className="space-y-3">
                 {companyInfo.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
+                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200 font-arabic">
                       {item}
                     </a>
                   </li>
@@ -104,18 +104,18 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <h4 className="text-lg font-bold text-white">معلومات التواصل</h4>
+              <h4 className="text-lg font-bold text-white font-arabic">معلومات التواصل</h4>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">{info.label}</p>
+                      <p className="text-gray-400 text-sm font-arabic">{info.label}</p>
                       <a 
                         href={info.link} 
-                        className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
+                        className="text-white hover:text-gray-300 transition-colors duration-200 font-medium font-arabic"
                       >
                         {info.value}
                       </a>
@@ -133,8 +133,8 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
-              <Users className="w-5 h-5 text-blue-400" />
-              <span className="text-gray-300">
+              <Users className="w-5 h-5 text-white" />
+              <span className="text-gray-300 font-arabic">
                 © {new Date().getFullYear()} بزنس اريبيا. جميع الحقوق محفوظة.
               </span>
             </div>
@@ -142,19 +142,19 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
               >
                 سياسة الخصوصية
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
               >
                 شروط الاستخدام
               </a>
               <a 
                 href="#" 
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"
               >
                 خريطة الموقع
               </a>
