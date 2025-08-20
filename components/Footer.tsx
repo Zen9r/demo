@@ -1,6 +1,8 @@
 "use client"
 
-import { Globe, Mail, Phone, MapPin, Clock, Users, Award } from "lucide-react"
+import { Globe, Mail, Phone, MapPin, Clock, Users, Award, Linkedin, Twitter, Instagram, Youtube, Calendar, ArrowLeft } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import ThemeToggle from "./ThemeToggle"
 
 export default function Footer() {
   const contactInfo = [
@@ -48,8 +50,35 @@ export default function Footer() {
     "وظائف شاغرة"
   ]
 
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="w-5 h-5" />,
+      link: "#",
+      color: "hover:text-white"
+    },
+    {
+      name: "Twitter",
+      icon: <Twitter className="w-5 h-5" />,
+      link: "#",
+      color: "hover:text-white"
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram className="w-5 h-5" />,
+      link: "#",
+      color: "hover:text-white"
+    },
+    {
+      name: "YouTube",
+      icon: <Youtube className="w-5 h-5" />,
+      link: "#",
+      color: "hover:text-white"
+    }
+  ]
+
   return (
-    <footer className="bg-[#0a0a0a] text-white border-t border-gray-800">
+    <footer className="bg-[#050505] text-white border-t border-gray-800">
       {/* Main Footer Content */}
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -69,7 +98,7 @@ export default function Footer() {
                 نقدم حلول تقنية متطورة ومخصصة لمساعدة الشركات على النمو والتطور في العصر الرقمي.
               </p>
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-yellow-400" />
+                <Award className="w-5 h-5 text-white" />
                 <span className="text-sm text-gray-300 font-arabic">خبرة أكثر من 5 سنوات</span>
               </div>
             </div>
@@ -123,10 +152,29 @@ export default function Footer() {
                   </div>
                 ))}
               </div>
+              
+              {/* Social Links */}
+              <div className="pt-4">
+                <h5 className="text-sm font-semibold text-white mb-3 font-arabic">تابعنا على</h5>
+                <div className="flex gap-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.link}
+                      className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-300 transition-all duration-300 ${social.color} hover:bg-white/20`}
+                      title={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* CTA Section */}
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800 py-8 px-4">
@@ -139,6 +187,7 @@ export default function Footer() {
               </span>
             </div>
             <div className="flex items-center gap-6">
+              <ThemeToggle />
               <a 
                 href="#" 
                 className="text-gray-400 hover:text-white transition-colors duration-200 font-arabic"

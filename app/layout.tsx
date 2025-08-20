@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Tajawal, Raleway } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const tajawal = Tajawal({
@@ -29,9 +30,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" className={`${tajawal.variable} ${raleway.variable}`}>
-      <body className="font-sans antialiased" suppressHydrationWarning={true}>
-        {children}
+    <html lang="ar" className={`${tajawal.variable} ${raleway.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -2,11 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Star, Crown, Clock, Users, Shield, Zap, Palette, Globe, Award } from "lucide-react"
+import { Check, Star, Crown, Clock, Users, Shield, Zap, Palette, Globe, Award, AlertCircle, ArrowRight, Sparkles } from "lucide-react"
 
 export default function PricingSection() {
   const basicPackage = {
     name: "الباقة الأساسية",
+    tagline: "مثالية للشركات الناشئة التي تريد إنشاء حضور إلكتروني احترافي",
     price: "2,500",
     originalPrice: "4,000",
     discount: "خصم 37.5%",
@@ -26,6 +27,7 @@ export default function PricingSection() {
 
   const advancedPackage = {
     name: "الباقة المتقدمة",
+    tagline: "للشركات المتوسطة التي تريد موقع متكامل مع وظائف متقدمة",
     price: "4,500",
     originalPrice: "8,000",
     discount: "خصم 43.75%",
@@ -49,20 +51,33 @@ export default function PricingSection() {
   }
 
   return (
-    <section className="py-20 px-4 bg-[#0a0a0a] text-white">
+    <section className="py-20 px-4 bg-[#050505] text-white">
       <div className="max-w-6xl mx-auto">
+        {/* Urgency Banner */}
+        <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 border border-gray-600/50 rounded-2xl p-6 mb-12 text-center">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <AlertCircle className="w-6 h-6 text-white" />
+            <h3 className="text-xl font-bold text-white font-arabic">
+              عرض محدود!
+            </h3>
+          </div>
+          <p className="text-gray-300 font-arabic">
+            هذا العرض المخصص صالح لمدة 14 يوم فقط. احجز مكانك الآن قبل انتهاء الصلاحية!
+          </p>
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-arabic">
-            باقات الأسعار
+            باقات الأسعار المخصصة
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-arabic">
-            اختر الباقة التي تناسب احتياجات عملك وميزانيتك
+            اختر الباقة التي تناسب احتياجات عملك وميزانيتك. كل باقة مصممة خصيصاً لتحقيق أهدافك
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Basic Package */}
-          <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
+          <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 luxury-hover">
             <CardHeader className="text-center pb-6">
               <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
                 <Star className="w-10 h-10" />
@@ -70,6 +85,9 @@ export default function PricingSection() {
               <CardTitle className="text-2xl font-bold text-white font-arabic">
                 {basicPackage.name}
               </CardTitle>
+              <p className="text-gray-400 font-arabic text-sm mt-2">
+                {basicPackage.tagline}
+              </p>
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-gray-300">{basicPackage.price} SAR</div>
                 <div className="text-lg text-gray-500 line-through">{basicPackage.originalPrice} SAR</div>
@@ -93,18 +111,19 @@ export default function PricingSection() {
                 ))}
               </div>
               
-              <Button className="w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 text-lg mt-6 font-arabic">
-                اختر الباقة الأساسية
+              <Button className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 text-lg mt-6 font-arabic group transition-all duration-300 luxury-hover">
+                <span>ابدأ بهذه الباقة</span>
+                <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
           </Card>
 
           {/* Advanced Package */}
-          <Card className="bg-gray-900/50 border-2 border-gray-600 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 relative">
+          <Card className="bg-gray-900/50 border-2 border-white hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 relative luxury-hover">
             {advancedPackage.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-2 rounded-full font-bold text-sm font-arabic flex items-center gap-2">
-                  <Crown className="w-4 h-4" />
+                <div className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm font-arabic flex items-center gap-2">
+                  <Sparkles className="w-4 h-4" />
                   الأكثر طلباً
                 </div>
               </div>
@@ -116,6 +135,9 @@ export default function PricingSection() {
               <CardTitle className="text-2xl font-bold text-white font-arabic">
                 {advancedPackage.name}
               </CardTitle>
+              <p className="text-gray-400 font-arabic text-sm mt-2">
+                {advancedPackage.tagline}
+              </p>
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-gray-300">{advancedPackage.price} SAR</div>
                 <div className="text-lg text-gray-500 line-through">{advancedPackage.originalPrice} SAR</div>
@@ -139,8 +161,9 @@ export default function PricingSection() {
                 ))}
               </div>
               
-              <Button className="w-full bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-3 text-lg mt-6 font-arabic">
-                اختر الباقة المتقدمة
+              <Button className="w-full bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-gray-200 text-black font-semibold py-3 text-lg mt-6 font-arabic group transition-all duration-300 luxury-hover">
+                <span>ابدأ بهذه الباقة</span>
+                <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
           </Card>
@@ -154,14 +177,15 @@ export default function PricingSection() {
                 تحتاج باقة مخصصة؟
               </h3>
               <p className="text-gray-300 font-arabic">
-                يمكننا تصميم باقة خاصة تناسب احتياجاتك المحددة
+                يمكننا تصميم باقة خاصة تناسب احتياجاتك المحددة وأهدافك التجارية
               </p>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black font-arabic"
+                className="border-white text-white hover:bg-white hover:text-black font-arabic group luxury-hover"
               >
-                تحدث معنا
+                <span>تحدث معنا الآن</span>
+                <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
           </div>
