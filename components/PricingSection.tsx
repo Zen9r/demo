@@ -2,57 +2,67 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, Star, Crown, Clock, Users, Shield, Zap, Palette, Globe, Award, AlertCircle, ArrowRight, Sparkles } from "lucide-react"
+import { Check, Star, Crown, Clock, Users, Shield, Zap, Palette, Globe, Award, AlertCircle, ArrowRight, Sparkles, Bot, Key, GraduationCap } from "lucide-react"
 
 export default function PricingSection() {
-  const basicPackage = {
-    name: "الباقة الأساسية",
-    tagline: "مثالية للشركات الناشئة التي تريد إنشاء حضور إلكتروني احترافي",
-    price: "2,500",
-    originalPrice: "4,000",
-    discount: "خصم 37.5%",
+  const essentialPackage = {
+    name: "باقة الانطلاق",
+    tagline: "نقطة بداية احترافية وكاملة، لكنها محدودة المرونة المستقبلية.",
+    price: "1,800",
+    originalPrice: "3,000",
+    discount: "عرض تأسيسي بخصم 40%",
     features: [
-      "تصميم موقع مخصص (5-7 صفحات)",
-      "تصميم متجاوب لجميع الأجهزة",
-      "نظام إدارة محتوى أساسي",
-      "ألوان وخطوط مخصصة",
-      "SEO أساسي",
-      "شهادة SSL للأمان",
-      "استضافة لمدة سنة",
-      "دعم فني لمدة شهر"
+      "تطوير موقع مخصص (4 صفحات)",
+      "أساس تقني آمن (Private Git Repo)",
+      "لوحة تحكم Sanity.io لإدارة المحتوى الديناميكي",
+      "تواصل مباشر عبر واتساب",
+      "مدة الإنجاز: 4 أسابيع (تحديث أسبوعي)",
+      "دعم فني: 15 يوماً بعد الإطلاق",
+      "لا تشمل: تعديلات أو إضافات مستقبلية"
     ],
-    duration: "3-4 أسابيع",
     color: "from-gray-500 to-gray-600"
   }
 
-  const advancedPackage = {
-    name: "الباقة المتقدمة",
-    tagline: "للشركات المتوسطة التي تريد موقع متكامل مع وظائف متقدمة",
-    price: "4,500",
-    originalPrice: "8,000",
-    discount: "خصم 43.75%",
+  const growthPackage = {
+    name: "باقة النمو",
+    tagline: "الصفقة الرابحة التي لا تقاوم، تقدم أعلى قيمة مقابل السعر.",
+    price: "3,000",
+    originalPrice: "7,500",
+    discount: "عرض القيمة الأفضل بخصم 60%",
     features: [
-      "كل ما في الباقة الأساسية",
-      "تصميم موقع مخصص (8-12 صفحة)",
-      "نظام إدارة محتوى متقدم",
-      "نظام طلبات وإدارة عملاء",
-      "نظام مدفوعات متكامل",
-      "لوحة تحكم إدارية شاملة",
-      "SEO متقدم",
-      "تحليلات وإحصائيات مفصلة",
-      "نسخ احتياطية تلقائية",
-      "دعم فني لمدة 3 أشهر",
-      "تدريب شامل على النظام",
-      "صيانة دورية لمدة 6 أشهر"
+      "كل ما في باقة الانطلاق",
+      "✨ أتمتة التواصل: نماذج ذكية تحول استفسارات العملاء إلى رسائل واتساب جاهزة.",
+      "✨ مرونة مستقبلية: إمكانية إضافة ميزة أو صفحة جديدة خلال أول 3 أشهر.",
+      "✨ سيطرة أكبر على المحتوى: تعديل نصوص الصفحات الرئيسية عبر لوحة التحكم.",
+      "🚀 راحة بال ممتدة: دعم فني لمدة 3 أشهر كاملة.",
+      "🎓 جلسة تدريبية (45 دقيقة): لشرح كيفية استخدام لوحة التحكم.",
+      "📈 متابعة أسرع: تحديثان أسبوعياً خلال التطوير."
     ],
-    duration: "6-8 أسابيع",
     color: "from-gray-600 to-gray-700",
     popular: true
   }
 
+  const strategicPackage = {
+      name: "باقة الشراكة الاستراتيجية",
+      tagline: "الحل المتكامل للعميل الطموح الذي يريد السيطرة والأتمتة الكاملة.",
+      price: "5,000",
+      originalPrice: "10,000",
+      discount: "عرض الحل المتكامل بخصم 50%",
+      features: [
+          "كل ما في باقة النمو",
+          "🤖 بوت واتساب للرد الفوري: أتمتة كاملة للرد الأولي على العملاء.",
+          "🔑 ملكية واستقلالية مطلقة: تسليم كامل للكود المصدري على حسابات العميل الخاصة.",
+          "✨ مرونة قصوى: إمكانية إضافة 3 ميزات جديدة خلال أول 6 أشهر.",
+          "👑 سيطرة تسويقية كاملة: القدرة على تعديل كل نصوص الموقع.",
+          "🚀 دعم فني VIP: لمدة 6 أشهر كاملة."
+      ],
+      color: "from-gray-700 to-gray-800"
+  }
+
+
   return (
     <section className="py-20 px-4 bg-[#050505] text-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Urgency Banner */}
         <div className="bg-gradient-to-r from-gray-800/30 to-gray-700/30 border border-gray-600/50 rounded-2xl p-6 mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-2">
@@ -68,42 +78,35 @@ export default function PricingSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-arabic">
-            باقات الأسعار المخصصة
+            اختر الباقة التي تناسبك
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-arabic">
-            اختر الباقة التي تناسب احتياجات عملك وميزانيتك. كل باقة مصممة خصيصاً لتحقيق أهدافك
+            كل باقة مصممة خصيصاً لتحقيق أهدافك التجارية ودفع عملك للنمو.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Basic Package */}
-          <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 luxury-hover">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Essential Package */}
+          <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 luxury-hover flex flex-col">
             <CardHeader className="text-center pb-6">
               <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
                 <Star className="w-10 h-10" />
               </div>
               <CardTitle className="text-2xl font-bold text-white font-arabic">
-                {basicPackage.name}
+                {essentialPackage.name}
               </CardTitle>
-              <p className="text-gray-400 font-arabic text-sm mt-2">
-                {basicPackage.tagline}
+              <p className="text-gray-400 font-arabic text-sm mt-2 h-12">
+                {essentialPackage.tagline}
               </p>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-gray-300">{basicPackage.price} SAR</div>
-                <div className="text-lg text-gray-500 line-through">{basicPackage.originalPrice} SAR</div>
-                <div className="text-lg text-gray-400 font-bold">{basicPackage.discount}</div>
+              <div className="space-y-2 mt-4">
+                <div className="text-4xl font-bold text-gray-300">{essentialPackage.price} SAR</div>
+                <div className="text-lg text-gray-500 line-through">{essentialPackage.originalPrice} SAR</div>
+                <div className="text-lg text-gray-400 font-bold">{essentialPackage.discount}</div>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 bg-gray-800/50 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold border border-gray-600">
-                  <Clock className="w-4 h-4" />
-                  <span className="font-arabic">مدة الإنجاز: {basicPackage.duration}</span>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                {basicPackage.features.map((feature, index) => (
+            <CardContent className="space-y-4 flex-grow flex flex-col">
+              <div className="space-y-3 flex-grow">
+                {essentialPackage.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-200 font-medium font-arabic">{feature}</span>
@@ -112,48 +115,41 @@ export default function PricingSection() {
               </div>
               
               <Button className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 text-lg mt-6 font-arabic group transition-all duration-300 luxury-hover">
-                <span>ابدأ بهذه الباقة</span>
+                <span>ابدأ بباقة الانطلاق</span>
                 <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
           </Card>
 
-          {/* Advanced Package */}
-          <Card className="bg-gray-900/50 border-2 border-white hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 relative luxury-hover">
-            {advancedPackage.popular && (
+          {/* Growth Package */}
+          <Card className="bg-gray-900/50 border-2 border-white hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 relative luxury-hover flex flex-col">
+            {growthPackage.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm font-arabic flex items-center gap-2">
                   <Sparkles className="w-4 h-4" />
-                  الأكثر طلباً
+                  الخيار الأفضل
                 </div>
               </div>
             )}
             <CardHeader className="text-center pb-6">
-              <div className={`w-20 h-20 bg-gradient-to-br ${advancedPackage.color} rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
+              <div className={`w-20 h-20 bg-gradient-to-br ${growthPackage.color} rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg`}>
                 <Crown className="w-10 h-10" />
               </div>
               <CardTitle className="text-2xl font-bold text-white font-arabic">
-                {advancedPackage.name}
+                {growthPackage.name}
               </CardTitle>
-              <p className="text-gray-400 font-arabic text-sm mt-2">
-                {advancedPackage.tagline}
+              <p className="text-gray-400 font-arabic text-sm mt-2 h-12">
+                {growthPackage.tagline}
               </p>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-gray-300">{advancedPackage.price} SAR</div>
-                <div className="text-lg text-gray-500 line-through">{advancedPackage.originalPrice} SAR</div>
-                <div className="text-lg text-gray-400 font-bold">{advancedPackage.discount}</div>
+              <div className="space-y-2 mt-4">
+                <div className="text-4xl font-bold text-gray-300">{growthPackage.price} SAR</div>
+                <div className="text-lg text-gray-500 line-through">{growthPackage.originalPrice} SAR</div>
+                <div className="text-lg text-gray-400 font-bold">{growthPackage.discount}</div>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 bg-gray-800/50 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold border border-gray-600">
-                  <Clock className="w-4 h-4" />
-                  <span className="font-arabic">مدة الإنجاز: {advancedPackage.duration}</span>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                {advancedPackage.features.map((feature, index) => (
+            <CardContent className="space-y-4 flex-grow flex flex-col">
+              <div className="space-y-3 flex-grow">
+                {growthPackage.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-200 font-medium font-arabic">{feature}</span>
@@ -162,33 +158,46 @@ export default function PricingSection() {
               </div>
               
               <Button className="w-full bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-gray-200 text-black font-semibold py-3 text-lg mt-6 font-arabic group transition-all duration-300 luxury-hover">
-                <span>ابدأ بهذه الباقة</span>
+                <span>اختر باقة النمو</span>
                 <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-3xl p-8 md:p-12">
-            <CardContent className="space-y-4">
-              <h3 className="text-2xl font-bold text-white font-arabic">
-                تحتاج باقة مخصصة؟
-              </h3>
-              <p className="text-gray-300 font-arabic">
-                يمكننا تصميم باقة خاصة تناسب احتياجاتك المحددة وأهدافك التجارية
+          
+          {/* Strategic Partner Package */}
+          <Card className="bg-gray-900/50 border-gray-800 hover:bg-gray-800/50 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 luxury-hover flex flex-col">
+            <CardHeader className="text-center pb-6">
+              <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg">
+                <Award className="w-10 h-10" />
+              </div>
+              <CardTitle className="text-2xl font-bold text-white font-arabic">
+                {strategicPackage.name}
+              </CardTitle>
+              <p className="text-gray-400 font-arabic text-sm mt-2 h-12">
+                {strategicPackage.tagline}
               </p>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black font-arabic group luxury-hover"
-              >
-                <span>تحدث معنا الآن</span>
-                <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+              <div className="space-y-2 mt-4">
+                <div className="text-4xl font-bold text-gray-300">{strategicPackage.price} SAR</div>
+                <div className="text-lg text-gray-500 line-through">{strategicPackage.originalPrice} SAR</div>
+                <div className="text-lg text-gray-400 font-bold">{strategicPackage.discount}</div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4 flex-grow flex flex-col">
+              <div className="space-y-3 flex-grow">
+                {strategicPackage.features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-200 font-medium font-arabic">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Button className="w-full bg-white text-black hover:bg-gray-100 font-semibold py-3 text-lg mt-6 font-arabic group transition-all duration-300 luxury-hover">
+                <span>كن شريكًا استراتيجيًا</span>
+                <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </CardContent>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
